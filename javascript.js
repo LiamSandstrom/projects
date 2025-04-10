@@ -1,6 +1,7 @@
 const linkContainers = document.querySelectorAll(".link-container");
 const borderColor = linkContainers[0].style.borderColor;
 const background = document.querySelector(".background");
+const contentSection = document.querySelector("#section-content");
 let startTextOpacity = document.querySelector(".link");
 startTextOpacity = window.getComputedStyle(startTextOpacity).opacity * 100;
 
@@ -50,6 +51,10 @@ for(let container of linkContainers){
                 child.style.setProperty("--gradient-color", finalColor);
             }
         }
+    })
+
+    container.addEventListener("click", () => {
+        contentSection.scrollIntoView( {behavior: "smooth"});
     })
 }
 
